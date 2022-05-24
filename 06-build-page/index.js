@@ -36,10 +36,10 @@ fs.readFile(path.join(__dirname, 'template.html'), 'utf8', (err, template) => {
 
 
 async function getData(dirPath = path.join(__dirname, 'styles')) {
-  fs.readdir(path.join(__dirname, 'project-dist'), (err, files) => {
+  await fs.readdir(path.join(__dirname, 'project-dist'), (err, files) => {
     if (err) throw err;
     for (const file of files) {
-      if (file.toString() === 'bundle.css') {
+      if (file.toString() === 'style.css') {
         fs.unlink(path.join(__dirname, 'project-dist/style.css'), err => {
           if (err) throw err;
         });
