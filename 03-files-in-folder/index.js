@@ -18,7 +18,5 @@ fs.readdir(path.join(__dirname, 'secret-folder'),
           });
         }
       });
-
-      fs.writeFile(path.join(__dirname, 'project-dist/bundle.css'), `${item}\n`, {flag: 'a'});
     }
   });
