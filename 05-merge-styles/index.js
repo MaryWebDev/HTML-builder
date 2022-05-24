@@ -1,7 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 
+
 async function getData(dirPath = path.join(__dirname, 'styles')) {
+  await fs.promises.unlink(path.join(__dirname, 'project-dist/bundle.css'));
   fs.readdir(dirPath, {withFileTypes: true}, (err, files) => {
     if (err) throw err;
     for (const file of files) {
